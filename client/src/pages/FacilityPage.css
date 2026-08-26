@@ -1,0 +1,176 @@
+.facility-hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2.5rem;
+  padding: 2.25rem;
+  background: #ffffff;
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+}
+
+.facility-hero-left {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.facility-big-icon {
+  font-size: 3rem;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-lg);
+}
+
+.facility-hero-right {
+  display: flex;
+  gap: 1rem;
+}
+
+.stat-pill {
+  background: #f8f7f2;
+  border: 1px solid var(--color-border);
+  padding: 0.75rem 1.25rem;
+  border-radius: var(--radius-lg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stat-pill-label {
+  font-size: 0.7rem;
+  color: var(--color-text-3);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 700;
+}
+
+.stat-pill-value {
+  font-weight: 800;
+  font-size: 0.95rem;
+  margin-top: 0.2rem;
+  color: #111;
+}
+
+.date-strip-section {
+  margin-bottom: 2.5rem;
+}
+
+.section-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  color: #111;
+}
+
+.date-strip {
+  display: flex;
+  gap: 0.75rem;
+  overflow-x: auto;
+  padding-bottom: 1rem;
+  scrollbar-width: thin;
+}
+
+.date-pill {
+  flex: 0 0 78px;
+  background: #ffffff;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 0.85rem 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  box-shadow: var(--shadow-sm);
+}
+
+.date-pill:hover {
+  background: #f0eee6;
+  border-color: var(--color-border-2);
+}
+
+.date-pill-active {
+  background: #111111 !important;
+  border-color: #111111 !important;
+  color: #ffffff !important;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.date-pill-active .date-pill-day,
+.date-pill-active .date-pill-num,
+.date-pill-active .date-pill-month {
+  color: #ffffff !important;
+}
+
+.date-pill-day {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--color-text-3);
+  text-transform: uppercase;
+}
+
+.date-pill-num {
+  font-size: 1.45rem;
+  font-weight: 800;
+  font-family: var(--font-display);
+  margin: 0.2rem 0;
+  color: var(--color-text);
+}
+
+.date-pill-month {
+  font-size: 0.72rem;
+  color: var(--color-text-3);
+  font-weight: 600;
+}
+
+.slots-section {
+  background: #ffffff;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: 2.25rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.legend-pills {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.82rem;
+  color: var(--color-text-2);
+  font-weight: 600;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.legend-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.bg-success { background: var(--color-success); }
+.bg-error { background: var(--color-error); }
+.bg-info { background: var(--color-info); }
+
+@media (max-width: 768px) {
+  .facility-hero {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+  .facility-hero-right {
+    width: 100%;
+    justify-content: space-between;
+  }
+  .stat-pill {
+    flex: 1;
+  }
+}

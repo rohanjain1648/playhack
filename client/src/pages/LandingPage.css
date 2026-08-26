@@ -1,0 +1,844 @@
+/* ═══════════════════════════════════════════════════════════════
+   Padelthon Club Aesthetic Landing Page (Mobile-Optimized)
+   Palette: Warm Cream (#f8f7f2) × Neon Lime (#d4f938) × Deep Onyx (#111)
+   ═══════════════════════════════════════════════════════════════ */
+
+:root {
+  --padel-bg:        #f8f7f2;
+  --padel-bg-subtle: #f0eee6;
+  --padel-card:      #ffffff;
+  --padel-neon:      #d4f938;
+  --padel-neon-hover:#c4eb28;
+  --padel-text:      #141414;
+  --padel-text-muted:#6b6b6b;
+  --padel-border:    rgba(0, 0, 0, 0.08);
+  --padel-border-hi: rgba(0, 0, 0, 0.16);
+}
+
+.padel-landing-root {
+  background-color: var(--padel-bg);
+  color: var(--padel-text);
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+/* ── Vertical Grid Guidelines ── */
+.bg-grid-lines {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: space-between;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.grid-line {
+  width: 1px;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.04);
+}
+
+.padel-container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── 1. Hero Section ── */
+.padel-hero {
+  padding: 3.5rem 0 3rem;
+}
+
+.hero-head-wrap {
+  max-width: 820px;
+  margin: 0 auto 3rem;
+}
+
+.hero-script-eyebrow {
+  font-family: 'Instrument Serif', serif;
+  font-style: italic;
+  font-size: clamp(2.2rem, 6vw, 3.8rem);
+  color: var(--padel-text);
+  line-height: 1;
+  margin-bottom: 0.35rem;
+  letter-spacing: -0.01em;
+}
+
+.hero-headline {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 800;
+  font-size: clamp(2.3rem, 7vw, 4.8rem);
+  line-height: 1.05;
+  color: #111111;
+  letter-spacing: -0.03em;
+  margin-bottom: 1.25rem;
+}
+
+.hero-subtext {
+  font-size: clamp(0.95rem, 2.5vw, 1.1rem);
+  color: var(--padel-text-muted);
+  line-height: 1.6;
+  max-width: 580px;
+  margin: 0 auto 2rem;
+}
+
+.hero-cta-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* Neon Lime Pill Button */
+.btn-neon-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: var(--padel-neon);
+  color: #111111;
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 0.85rem 1.85rem;
+  border-radius: 9999px;
+  text-decoration: none;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 18px rgba(212, 249, 56, 0.4);
+  transition: all var(--transition-fast);
+  cursor: pointer;
+}
+
+.btn-neon-pill:hover {
+  background-color: var(--padel-neon-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(212, 249, 56, 0.55);
+}
+
+.btn-ghost-arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  color: var(--padel-text);
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-decoration: none;
+  padding: 0.85rem 1.25rem;
+  transition: all var(--transition-fast);
+}
+
+.btn-ghost-arrow:hover {
+  color: #000;
+  transform: translateX(3px);
+}
+
+.cta-arrow {
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+/* ── 2. Gallery Strip (Responsive Carousel on Mobile) ── */
+.gallery-strip {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.25rem;
+  margin-top: 1rem;
+}
+
+.gallery-card {
+  position: relative;
+  border-radius: 22px;
+  overflow: hidden;
+  background: #e8e6dc;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.gallery-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.14);
+}
+
+.card-img-wrapper {
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  border-radius: 22px;
+}
+
+.card-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s ease;
+}
+
+.gallery-card:hover .card-photo {
+  transform: scale(1.05);
+}
+
+/* Neon Angle Tag */
+.neon-card-tag {
+  position: absolute;
+  top: 14px;
+  z-index: 2;
+  background: var(--padel-neon);
+  color: #111111;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  padding: 0.35rem 0.75rem;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  white-space: nowrap;
+}
+
+.tag-angle-left {
+  left: 12px;
+  transform: rotate(-3deg);
+}
+
+.tag-angle-right {
+  right: 12px;
+  transform: rotate(3deg);
+}
+
+.tag-centered {
+  position: static;
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+/* ── 3. Editorial Statement Section ── */
+.editorial-section {
+  padding: 5rem 0 4rem;
+  border-top: 1px solid var(--padel-border);
+}
+
+.editorial-eyebrow {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--padel-text-muted);
+  margin-bottom: 1.25rem;
+}
+
+.editorial-statement {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: clamp(1.5rem, 3.5vw, 2.75rem);
+  font-weight: 700;
+  line-height: 1.35;
+  color: #1a1a1a;
+  max-width: 860px;
+  margin: 0 auto 3.5rem;
+  letter-spacing: -0.02em;
+}
+
+/* Inline Sport Chips */
+.inline-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.15rem 0.65rem;
+  border-radius: 9999px;
+  font-size: 0.85em;
+  font-weight: 700;
+  vertical-align: middle;
+}
+
+.badge-tennis {
+  background: #e4fad2;
+  color: #2b5709;
+  border: 1px solid #c2ee9e;
+}
+
+.badge-arena {
+  background: #fdf3d6;
+  color: #795208;
+  border: 1px solid #f9e29a;
+}
+
+/* Trust Hostels Bar */
+.trust-strip {
+  padding-top: 2rem;
+  border-top: 1px dashed var(--padel-border);
+}
+
+.trust-label {
+  display: block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: var(--padel-text-muted);
+  margin-bottom: 1.25rem;
+}
+
+.trust-logos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.85rem;
+  flex-wrap: wrap;
+}
+
+.hostel-badge {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #444;
+  padding: 0.35rem 0.85rem;
+  background: #ffffff;
+  border: 1px solid var(--padel-border);
+  border-radius: 8px;
+}
+
+/* ── 4. Concurrency Bento Grid (Clean Light Style) ── */
+.padel-bento-section {
+  padding: 4.5rem 0 5.5rem;
+  background: var(--padel-bg-subtle);
+  border-top: 1px solid var(--padel-border);
+  border-bottom: 1px solid var(--padel-border);
+}
+
+.bento-intro {
+  max-width: 680px;
+  margin: 0 auto 3rem;
+}
+
+.bento-main-title {
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  font-weight: 800;
+  color: #111;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.85rem;
+}
+
+.highlight-text {
+  background: linear-gradient(180deg, transparent 60%, var(--padel-neon) 60%);
+  display: inline;
+}
+
+.bento-subtitle {
+  color: var(--padel-text-muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.padel-bento-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.bento-box {
+  background: #ffffff;
+  border: 1px solid var(--padel-border);
+  border-radius: 20px;
+  padding: 1.75rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all var(--transition-base);
+}
+
+.bento-box:hover {
+  border-color: var(--padel-border-hi);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.07);
+}
+
+.bento-box-wide {
+  grid-column: span 2;
+}
+
+.bento-box-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.25rem;
+}
+
+.pill-status-neon {
+  background: #effdca;
+  color: #2b5406;
+  border: 1px solid #d4f938;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  padding: 0.25rem 0.65rem;
+  border-radius: 9999px;
+}
+
+.bento-box-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #111;
+  margin-bottom: 0.5rem;
+}
+
+.bento-box-desc {
+  font-size: 0.88rem;
+  color: var(--padel-text-muted);
+  line-height: 1.55;
+  margin-bottom: 1.25rem;
+}
+
+/* Light simulation widget */
+.sim-widget-light {
+  background: #f8f7f2;
+  border: 1px solid var(--padel-border);
+  border-radius: 14px;
+  padding: 1.15rem;
+}
+
+.sim-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--padel-text-muted);
+}
+
+.sim-button-group {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.sim-pill {
+  background: #fff;
+  border: 1px solid var(--padel-border);
+  color: #333;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.25rem 0.65rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.sim-pill.active {
+  background: #111;
+  color: #fff;
+  border-color: #111;
+}
+
+.btn-sim-run {
+  width: 100%;
+  background: #111;
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.88rem;
+  padding: 0.8rem;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  transition: background var(--transition-fast);
+}
+
+.btn-sim-run:hover {
+  background: #2b2b2b;
+}
+
+.sim-result-box {
+  margin-top: 0.85rem;
+  padding: 0.75rem 1rem;
+  background: #e8f9d8;
+  border: 1px solid #b8eca0;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  color: #275608;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.stat-highlight {
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 1px solid var(--padel-border);
+}
+
+.stat-num {
+  font-size: 1.65rem;
+  font-weight: 800;
+  color: #111;
+  display: block;
+}
+
+.stat-desc {
+  font-size: 0.75rem;
+  color: var(--padel-text-muted);
+}
+
+/* ── 5. Facilities Matrix Section ── */
+.padel-facilities-section {
+  padding: 5rem 0;
+}
+
+.facilities-headline {
+  font-size: clamp(1.8rem, 4vw, 2.75rem);
+  font-weight: 800;
+  color: #111;
+  letter-spacing: -0.02em;
+}
+
+.facilities-subtext {
+  color: var(--padel-text-muted);
+  font-size: 0.92rem;
+}
+
+.btn-outline-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.65rem 1.35rem;
+  border-radius: 9999px;
+  border: 1.5px solid #111;
+  color: #111;
+  font-weight: 700;
+  font-size: 0.88rem;
+  text-decoration: none;
+  transition: all var(--transition-fast);
+}
+
+.btn-outline-pill:hover {
+  background: #111;
+  color: #fff;
+}
+
+.sports-category-bar {
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: auto;
+  padding-bottom: 1.25rem;
+  margin-bottom: 2rem;
+  scrollbar-width: thin;
+}
+
+.sport-tab {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: #ffffff;
+  border: 1px solid var(--padel-border);
+  color: #444;
+  padding: 0.55rem 1.15rem;
+  border-radius: 9999px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.sport-tab:hover {
+  background: #f0eee6;
+  color: #111;
+}
+
+.sport-tab.active {
+  background: #111;
+  color: #fff;
+  border-color: #111;
+}
+
+.venues-grid-light {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.padel-venue-card {
+  background: #ffffff;
+  border: 1px solid var(--padel-border);
+  border-radius: 20px;
+  padding: 1.75rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all var(--transition-base);
+}
+
+.padel-venue-card:hover {
+  border-color: var(--padel-border-hi);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+}
+
+.venue-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.25rem;
+}
+
+.venue-icon-box {
+  font-size: 2rem;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f4f3ea;
+  border-radius: 12px;
+}
+
+.venue-type-pill {
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  background: #f4f3ea;
+  color: #444;
+  padding: 0.25rem 0.65rem;
+  border-radius: 9999px;
+}
+
+.venue-title-text {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #111;
+  margin-bottom: 0.4rem;
+}
+
+.venue-summary-text {
+  font-size: 0.85rem;
+  color: var(--padel-text-muted);
+  line-height: 1.5;
+  margin-bottom: 1.25rem;
+}
+
+.venue-tags-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  font-size: 0.78rem;
+  color: #777;
+  margin-bottom: 1.5rem;
+}
+
+.btn-venue-reserve {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: #111111;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 0.88rem;
+  padding: 0.8rem;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.btn-venue-reserve:hover {
+  background: #333;
+}
+
+/* ── 6. Full Banner CTA ── */
+.padel-cta-banner {
+  padding: 4.5rem 0 5.5rem;
+  background: var(--padel-bg-subtle);
+}
+
+.cta-inner-card {
+  background: #ffffff;
+  border: 1px solid var(--padel-border);
+  border-radius: 28px;
+  padding: 3.5rem 1.75rem;
+  max-width: 920px;
+  margin: 0 auto;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.04);
+}
+
+.cta-heading {
+  font-size: clamp(1.8rem, 4vw, 3.2rem);
+  font-weight: 800;
+  color: #111;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.85rem;
+}
+
+.cta-subheading {
+  font-size: 0.95rem;
+  color: var(--padel-text-muted);
+  max-width: 580px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* ── 7. Footer ── */
+.padel-footer {
+  background: #ffffff;
+  border-top: 1px solid var(--padel-border);
+  padding: 3.5rem 0 2rem;
+}
+
+.footer-logo-text {
+  font-family: 'Instrument Serif', serif;
+  font-style: italic;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 0.35rem;
+}
+
+.footer-desc {
+  font-size: 0.85rem;
+  color: var(--padel-text-muted);
+  max-width: 320px;
+}
+
+.footer-nav-links {
+  display: flex;
+  gap: 1.5rem;
+  font-size: 0.88rem;
+  font-weight: 600;
+  flex-wrap: wrap;
+}
+
+.footer-nav-links a {
+  color: #333;
+  text-decoration: none;
+}
+
+.footer-nav-links a:hover {
+  color: #000;
+  text-decoration: underline;
+}
+
+.footer-bottom-bar {
+  padding-top: 1.5rem;
+  margin-top: 2.5rem;
+  border-top: 1px solid var(--padel-border);
+}
+
+/* ── Responsive & Mobile Touch Optimizations ── */
+@media (max-width: 1024px) {
+  .gallery-strip {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .padel-bento-grid {
+    grid-template-columns: 1fr;
+  }
+  .bento-box-wide {
+    grid-column: span 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .padel-hero {
+    padding: 2.5rem 0 2rem;
+  }
+  
+  .hero-head-wrap {
+    margin-bottom: 2rem;
+  }
+
+  /* Horizontal swipeable gallery carousel on mobile */
+  .gallery-strip {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 1.25rem;
+    gap: 1rem;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .gallery-strip::-webkit-scrollbar {
+    display: none;
+  }
+
+  .gallery-card {
+    flex: 0 0 220px;
+    scroll-snap-align: start;
+    border-radius: 18px;
+  }
+
+  .card-img-wrapper {
+    border-radius: 18px;
+  }
+
+  .hero-cta-group {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .btn-neon-pill,
+  .btn-ghost-arrow {
+    width: 100%;
+    justify-content: center;
+    padding: 0.9rem 1.25rem;
+  }
+
+  .editorial-section {
+    padding: 3.5rem 0 2.5rem;
+  }
+
+  .editorial-statement {
+    font-size: 1.4rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .trust-logos {
+    gap: 0.5rem;
+  }
+
+  .hostel-badge {
+    font-size: 0.75rem;
+    padding: 0.3rem 0.65rem;
+  }
+
+  .padel-bento-section {
+    padding: 3.5rem 0 4rem;
+  }
+
+  .bento-box {
+    padding: 1.35rem;
+  }
+
+  .padel-facilities-section {
+    padding: 3.5rem 0;
+  }
+
+  .facilities-intro {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .btn-outline-pill {
+    width: 100%;
+  }
+
+  .venues-grid-light {
+    grid-template-columns: 1fr;
+  }
+
+  .padel-cta-banner {
+    padding: 3.5rem 0 4rem;
+  }
+
+  .cta-inner-card {
+    padding: 2.5rem 1.25rem;
+    border-radius: 20px;
+  }
+
+  .footer-top {
+    flex-direction: column;
+    gap: 1.75rem;
+  }
+}

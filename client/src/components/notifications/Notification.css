@@ -1,0 +1,130 @@
+.notif-container {
+  position: relative;
+}
+
+.notif-bell-btn {
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  color: var(--color-text);
+  border-radius: var(--radius-full);
+  padding: 0.45rem 0.65rem;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: all var(--transition-fast);
+  cursor: pointer;
+}
+
+.notif-bell-btn:hover {
+  background: #f4f3ea;
+  border-color: rgba(0, 0, 0, 0.2);
+}
+
+.notif-badge {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  background: var(--color-error);
+  color: #fff;
+  font-size: 0.65rem;
+  font-weight: 800;
+  padding: 0.15rem 0.35rem;
+  border-radius: var(--radius-full);
+  min-width: 16px;
+  text-align: center;
+  line-height: 1;
+}
+
+.notif-dropdown {
+  position: absolute;
+  top: calc(100% + 0.6rem);
+  right: 0;
+  width: 330px;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.12);
+  z-index: 200;
+  overflow: hidden;
+}
+
+.notif-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.85rem 1.15rem;
+  border-bottom: 1px solid var(--color-border);
+  background: #f8f7f2;
+}
+
+.notif-mark-read-btn {
+  background: transparent;
+  border: none;
+  color: #111;
+  font-size: 0.75rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.notif-mark-read-btn:hover {
+  text-decoration: underline;
+}
+
+.notif-list {
+  max-height: 350px;
+  overflow-y: auto;
+}
+
+.notif-empty {
+  padding: 2rem 1rem;
+  text-align: center;
+  color: var(--color-text-3);
+  font-size: 0.85rem;
+}
+
+.notif-item {
+  display: flex;
+  gap: 0.75rem;
+  padding: 0.85rem 1.15rem;
+  border-bottom: 1px solid var(--color-border);
+  cursor: pointer;
+  transition: background var(--transition-fast);
+}
+
+.notif-item:hover {
+  background: #f8f7f2;
+}
+
+.notif-item-unread {
+  background: #effdca;
+  border-left: 3px solid #d4f938;
+}
+
+.notif-icon {
+  font-size: 1.25rem;
+  line-height: 1;
+}
+
+.notif-content {
+  flex: 1;
+}
+
+.notif-title {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.notif-desc {
+  font-size: 0.75rem;
+  color: var(--color-text-2);
+  margin-top: 0.15rem;
+}
+
+.notif-time {
+  font-size: 0.7rem;
+  color: var(--color-text-3);
+  margin-top: 0.25rem;
+}

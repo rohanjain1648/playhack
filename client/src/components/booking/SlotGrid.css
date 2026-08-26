@@ -1,0 +1,137 @@
+.slot-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+  gap: 1rem;
+}
+
+.slot-card {
+  background: #ffffff;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 1.15rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 115px;
+  transition: all var(--transition-fast);
+  user-select: none;
+  box-shadow: var(--shadow-sm);
+}
+
+.slot-card-available {
+  cursor: pointer;
+  border-color: rgba(21, 128, 61, 0.25);
+  background: #fafcf8;
+}
+
+.slot-card-available:hover {
+  border-color: var(--color-success);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(21, 128, 61, 0.12);
+  background: #ffffff;
+}
+
+.slot-card-selected {
+  border-color: #111 !important;
+  background: #effdca !important;
+  box-shadow: 0 0 0 2px #111;
+}
+
+.slot-card-booked {
+  opacity: 0.85;
+  background: #fff8f8;
+  border-color: rgba(185, 28, 28, 0.18);
+}
+
+.slot-card-maintenance {
+  opacity: 0.65;
+  background: #f0f9ff;
+  border-color: rgba(3, 105, 161, 0.2);
+}
+
+.slot-card-closed {
+  opacity: 0.5;
+  background: #f5f5f5;
+}
+
+.slot-time-range {
+  display: flex;
+  align-items: baseline;
+  gap: 0.3rem;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.15rem;
+  color: var(--color-text);
+}
+
+.slot-time-sep {
+  color: var(--color-text-3);
+  font-weight: 400;
+}
+
+.status-dot-green {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  background: var(--color-success);
+  border-radius: 50%;
+  margin-right: 4px;
+}
+
+.slot-waitlist-actions {
+  margin-top: 0.5rem;
+}
+
+.btn-join-waitlist {
+  width: 100%;
+  background: #fef3c7;
+  border: 1px solid rgba(180, 83, 9, 0.3);
+  color: #92400e;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.35rem 0.5rem;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.btn-join-waitlist:hover {
+  background: #fde68a;
+  border-color: #b45309;
+}
+
+.waitlist-joined-tag {
+  font-size: 0.75rem;
+  color: var(--color-warning);
+  font-weight: 700;
+  display: block;
+  text-align: center;
+}
+
+.slot-grid-empty {
+  text-align: center;
+  padding: 3rem 1rem;
+  background: #ffffff;
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius-lg);
+}
+
+@media (max-width: 600px) {
+  .slot-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.65rem;
+  }
+  .slot-card {
+    padding: 0.85rem 0.65rem;
+    min-height: 105px;
+  }
+  .slot-time-range {
+    font-size: 0.98rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .slot-grid {
+    grid-template-columns: 1fr;
+  }
+}
